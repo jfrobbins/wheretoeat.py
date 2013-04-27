@@ -31,6 +31,7 @@ class foodage:
             #add non-scott options:
             self.places += ['firehouse']
 
+        #use a bogus date to check the time to see if we can add breakfast as an option:
         if time < datetime(1980,1,1,10, 30, 0, 0).time():
            self.places.append('moose breakfast!')
         
@@ -55,6 +56,8 @@ class foodage:
         
 if __name__ == '__main__':
     #main program execution starts here:
+    #   (name __main__ is set with file is executed like 'python3 wheretoeat.py',
+    #   would not be the case if it were imported into another file )
     app = foodage(sys.argv[1:])
     #execute class method:
     app.whereToEat()
