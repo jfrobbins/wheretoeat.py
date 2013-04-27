@@ -11,7 +11,17 @@ class foodage:
     def __init__(self, args):
         user = getpass.getuser().upper()
         time =datetime.time(datetime.now())
-                 
+
+        #this is a dictionary (lookuptable/map)
+        #   { key : value, ... }
+        #   the keys can be any type (string, numeric)
+        #   the values can be lists, or single values
+        #       {1: ['blah', 'blah2'] }
+        #       { 'italian' : ['liltaliano', 'olive garden', 'carrabas'] }
+        genres = { 1: 'italian', 2: 'japanese' }
+        
+
+        #build a list of places:
         if user[:1] == 'SP':
             self.places = ['thai', 'thai', 'lil tokyo', 'thai', 'thai', 'moose cafe', 'liberty']
         else:
@@ -21,6 +31,7 @@ class foodage:
            self.places.append('moose breakfast!')
         
     def getChoice(self):
+        #return a random choice:
         eatAt = random.choice(self.places)
         print("\nHow do you feel about " + eatAt + " today?")
         response = input("u mad bro? (Y/n)")
@@ -30,13 +41,16 @@ class foodage:
             return 0
         
     def whereToEat(self):
+        #loop through based on user responses (return value of the method)
         eatHere = self.getChoice()
         while eatHere == 0:
             eatHere = self.getChoice()
             
         print("")
-        print("You should *definitely* eat " + eatHere + " today!")
+        print("You should *definitely* eat " + eatHere + " today!\n")
         
 if __name__ == '__main__':
+    #main program execution starts here:
     app = foodage(sys.argv[1:])
+    #execute class method:
     app.whereToEat()
