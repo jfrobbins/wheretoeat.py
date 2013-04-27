@@ -12,7 +12,7 @@ class foodage:
         user = getpass.getuser().upper()
         time =datetime.time(datetime.now())
                  
-        if user[:1] 'sp'.upper():
+        if user[:1] == 'SP':
             self.places = ['thai', 'thai', 'lil tokyo', 'thai', 'thai', 'moose cafe', 'liberty']
         else:
             self.places = ['thai', 'italian', 'lil tokyo', 'indian', 'giannos', 'not firehouse', 'moose cafe', 'liberty']
