@@ -22,10 +22,14 @@ class foodage:
         
 
         #build a list of places:
+        #standard places:
+        self.places = ['thai', 'lil tokyo', 'moose cafe', 'liberty', 'indian', 'giannos']
         if user[:1] == 'SP':
-            self.places = ['thai', 'thai', 'lil tokyo', 'thai', 'thai', 'moose cafe', 'liberty']
+            # moar thai
+            self.places += ['thai'] * 3
         else:
-            self.places = ['thai', 'italian', 'lil tokyo', 'indian', 'giannos', 'not firehouse', 'moose cafe', 'liberty']
+            #add non-scott options:
+            self.places += ['firehouse']
 
         if time < datetime(1980,1,1,10, 30, 0, 0).time():
            self.places.append('moose breakfast!')
